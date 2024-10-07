@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employment Form for Administrative & Support Roles</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .form-container {
+            width: 70%;
+            margin: auto;
+            background-color: #fff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="file"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background-color: #45a049;
+        }
+
+        .form-group-file {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-group-file input[type="file"] {
+            width: 48%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2>Employment Form for Administrative & Support Roles</h2>
+
+        <form action="process_form.php" method="POST" enctype="multipart/form-data">
+            
+            <!-- Bio-data Section -->
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" id="first_name" name="first_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" id="last_name" name="last_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <!-- SSN Section -->
+            <div class="form-group">
+                <label for="ssn">Social Security Number (SSN):</label>
+                <input type="password" id="ssn" name="ssn" required>
+            </div>
+
+            <!-- Job Selection Section -->
+            <div class="form-group">
+                <label for="job_role">Select the Job(s) You Are Applying For:</label>
+                <div>
+                    <input type="checkbox" id="virtual_assistant" name="job_role[]" value="Virtual Assistant">
+                    <label for="virtual_assistant">Virtual Assistant</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="customer_service" name="job_role[]" value="Customer Service Representative">
+                    <label for="customer_service">Customer Service Representative</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="data_entry" name="job_role[]" value="Data Entry Clerk">
+                    <label for="data_entry">Data Entry Clerk</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="transcriptionist" name="job_role[]" value="Transcriptionist">
+                    <label for="transcriptionist">Transcriptionist</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="executive_assistant" name="job_role[]" value="Executive Assistant">
+                    <label for="executive_assistant">Executive Assistant</label>
+                </div>
+            </div>
+
+            <!-- Government ID Upload -->
+            <div class="form-group">
+                <label for="id_number">Government-issued ID Number:</label>
+                <input type="text" id="id_number" name="id_number" required>
+            </div>
+
+            <div class="form-group-file">
+                <div>
+                    <label for="id_front">Upload Government-issued ID (Front):</label>
+                    <input type="file" id="id_front" name="id_front" accept="image/*" required>
+                </div>
+                <div>
+                    <label for="id_back">Upload Government-issued ID (Back):</label>
+                    <input type="file" id="id_back" name="id_back" accept="image/*" required>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="form-group">
+                <button type="submit" class="submit-btn">Submit Application</button>
+            </div>
+
+        </form>
+    </div>
+
+</body>
+</html>
